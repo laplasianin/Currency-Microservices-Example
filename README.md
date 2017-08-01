@@ -17,4 +17,4 @@
 
 ![Image](https://github.com/laplasianin/Currency-Microservices-Example/blob/master/pics/table.png)
 ![Image](https://github.com/laplasianin/Currency-Microservices-Example/blob/master/pics/chart.png)
-![Image](https://github.com/laplasianin/Currency-Microservices-Example/blob/master/pics/discoivery.png)
+![Image](https://github.com/laplasianin/Currency-Microservices-Example/blob/master/pics/discovery.png)
