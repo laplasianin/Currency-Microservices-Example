@@ -1,0 +1,53 @@
+<!--<div class="svg" role="presentation">-->
+    <!--<div class="grails-logo-container">-->
+        <!--<image src="/assets/grails-cupsonly-logo-white.svg" class="grails-logo"/>-->
+    <!--</div>-->
+<!--</div>-->
+
+<div id="content" role="main">
+    <section class="row colset-2-its">
+        <h1>Currency demo app</h1>
+
+        <p>
+            Currency data
+        </p>
+
+        <div>
+            <div id="spinner" class="spinner" ng-if="dataLoading"></div>
+            <uib-tabset active="active">
+                <uib-tab index="0" heading="Table">
+
+                    <table class="striped">
+                        <thead>
+                            <th>Date</th>
+                            <th>Eur</th>
+                            <th>Usd</th>
+                        </thead>
+                        <tbody>
+                            <tr ng-repeat="cur in currency">
+                                <td>{{cur.date}}</td>
+                                <td>
+                                    {{cur.eur}}
+                                    <span class="badge" ng-show="isMin(cur.eur, 'eur')">Min</span>
+                                    <span class="badge" ng-show="isMax(cur.eur, 'eur')">Max</span>
+                                </td>
+                                <td>
+                                    {{cur.usd}}
+                                    <span class="badge" ng-show="isMin(cur.usd, 'usd')">Min!</span>
+                                    <span class="badge" ng-show="isMax(cur.usd, 'usd')">Max!</span>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </uib-tab>
+                <uib-tab index="1" heading="Chart">
+                    wqe
+                    <canvas id="line" class="chart chart-line" chart-data="data"
+                            chart-labels="labels" chart-series="series" chart-options="options"
+                            chart-dataset-override="datasetOverride" chart-click="onClick">
+                    </canvas>
+                </uib-tab>
+            </uib-tabset>
+        </div>
+    </section>
+</div>

@@ -1,0 +1,79 @@
+version: '3'
+services:
+  config-server:
+    image: config-server
+    container_name: config-server
+    ports:
+      - 8888:8888
+    restart: always
+    logging:
+      options:
+        max-size: "10m"
+        max-file: "10"
+  service-discovery:
+    image: service-discovery
+    container_name: service-discovery  
+    ports:
+      - 8761:8761
+    depends_on:
+      - config-server
+    restart: always
+    logging:
+      options:
+        max-size: "10m"
+        max-file: "10"
+  api-gateway:
+    image: api-gateway
+    container_name: api-gateway
+    ports:
+      - 8899:8899
+    depends_on:
+      - config-server
+      - service-discovery
+    restart: always
+    logging:
+      options:
+        max-size: "10m"
+        max-file: "10"
+  currency-web:
+    image: currency-web
+    container_name: currency-web
+    ports:
+      - 8080:8080
+    depends_on:
+      - config-server
+      - service-discovery
+      - api-gateway
+    restart: always
+    logging:
+      options:
+        max-size: "10m"
+        max-file: "10"
+  currency-data:
+    image: currency-data
+    container_name: currency-data
+    ports:
+      - 8070:8070
+    depends_on:
+      - config-server
+      - service-discovery
+      - api-gateway
+    restart: always
+    logging:
+      options:
+        max-size: "10m"
+        max-file: "10"
+  currency-back:
+    image: currency-back
+    container_name: currency-back
+    ports:
+      - 8060:8060
+    depends_on:
+      - config-server
+      - service-discovery
+      - api-gateway
+    restart: always
+    logging:
+      options:
+        max-size: "10m"
+        max-file: "10"
