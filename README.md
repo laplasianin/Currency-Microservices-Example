@@ -14,3 +14,7 @@
 1. ./4-run-currency-data.sh
 1. ./5-run-currency-back.sh
 1. ./6-run-currency-web.sh
+
+![Image](https://github.com/laplasianin/Currency-Microservices-Example/blob/master/pics/table.png)
+![Image](https://github.com/laplasianin/Currency-Microservices-Example/blob/master/pics/chart.png)
+![Image](https://github.com/laplasianin/Currency-Microservices-Example/blob/master/pics/discoivery.png)
