@@ -8,7 +8,6 @@ import org.springframework.cloud.netflix.feign.EnableFeignClients
 
 @EnableDiscoveryClient
 @EnableFeignClients
-@EnableCircuitBreaker
 class Application extends GrailsAutoConfiguration {
     static void main(String[] args) {
         GrailsApp.run(Application, args)
